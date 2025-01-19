@@ -28,15 +28,14 @@ const NavBar = () => {
             "bg-black/30 text-white"}>
             <div className={"max-w-7xl mx-auto "}>
                 <div className={"flex justify-between items-center" +
-                    " py-5 mx-auto c-space"}>
-                    <a href={"./"} className={"text-neutral-400 font-bold text-xl " +
-                        "hover:text-white font-handwriting"}>
-                       <h3 className={'gradient-text hover:text-white'}>
-                           Khang Le</h3>
+                    " py-5 mx-auto  c-space"}>
+                    <a href={"./"} >
+                        <img src ={"assets/monogram-hq.svg"} alt={"logo"} className={'w-12 h-12 m-0 object-contain hover:scale-150'}/>
+                        {/*<h3 className={"font-handwriting gradient-text hover:text-white"}> Khang Le</h3>*/}
                     </a>
-                    <button onClick ={toggleMenu} className={"sm:hidden flex text-neutral-400 hover:text-white focus:outline-none"} >
+                    <button onClick={toggleMenu} className={"sm:hidden flex text-neutral-400 hover:text-white focus:outline-none"} >
                         <img src ={ isOpen? "assets/cancel.svg":"assets/menu-1.svg"} alt="menu icon"
-                        className={"w-6 h-6 " }/>
+                        className={"w-6 h-6 hover:scale-150 " }/>
                     </button>
                     <nav className ="sm:flex hidden">
                         <NavItems />
