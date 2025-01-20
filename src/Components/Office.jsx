@@ -12,34 +12,34 @@ import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
 import {useFrame, useThree} from "@react-three/fiber";
 
-const Office = (props) => {
-    // const RoomRef = useRef();
-    // // const [gl,viewport] = useThree();
-    // const lastX = useRef(0);
-    // const rotationSpeed=useRef(0);
-    // const dampingFactor=0.75;
-    // // const handleMouseDown=(e)=>{
-    //     e.stopPropagation();
-    //     e.preventDefault();
-    //     setIsRotating(true);
-    //     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    //     lastX.current = clientX;
-    // }
-    // const handleMouseUp=(e)=>{
-    //     e.stopPropagation();
-    //     e.preventDefault();
-    //     setIsRotating(false);
-    // }
-    // const handleMouseMove=(e)=>{
-    //     e.stopPropagation();
-    //     e.preventDefault();
-    //     if (isRotating){
-    //         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    //         const deltaX = (clientX - lastX.current)/viewport.width;
-    //         rotationSpeed.current.rotation.y+= Math.PI*deltaX*0.01;
-    //         lastX.current = clientX;
-    //     }
-    // }
+// eslint-disable-next-line react/prop-types
+const Office = ({isRotating, setIsRotating,setCurrentStage,...props}) => {
+    const RoomRef = useRef();
+    const {viewport,gl}=useThree();
+
+    const lastX = useRef(0);
+    const rotationSpeed=useRef(0);
+    const dampingFactor=0.75;
+    const handleMouseDown=(e)=>{
+        // console.log(e);
+        // e.preventDefault();
+        // setIsRotating(true);
+        // const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        // lastX.current = clientX;
+    }
+    const handleMouseUp=(e)=>{
+        // e.stopPropagation();
+        // e.preventDefault();
+        setIsRotating(false);
+    }
+    const handleMouseMove=(e)=>{
+        if (isRotating){
+            // const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            // const deltaX = (clientX - lastX.current)/viewport.width;
+            // rotationSpeed.current.rotation.y+= Math.PI*deltaX*0.01;
+            // lastX.current = clientX;
+        }
+    }
     // useFrame(() => {
     //
     //     // If not rotating, apply damping to slow down the rotation (smoothly)

@@ -9,7 +9,7 @@ Title: PIXEL PLANE
 import React, { useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
-const AirPlane = (props) =>  {
+const AirPlane = ({isRotating,...props}) =>  {
     const group = useRef()
 const { nodes, materials, animations } = useGLTF('pixel_plane/scene.gltf')
 const { actions } = useAnimations(animations, group)
