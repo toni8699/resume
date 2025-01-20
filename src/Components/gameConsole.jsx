@@ -11,7 +11,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const GameConsole = (props) => {
     const group = useRef()
-    const { nodes, materials, animations } = useGLTF('lumen_vgs_pack/lumen_vgs_pack.glb')
+    const { nodes, materials, animations } = useGLTF('GameConsole/scene.gltf')
     const { actions } = useAnimations(animations, group)
     return (
         <group ref={group} {...props} dispose={null}>
@@ -464,6 +464,6 @@ const GameConsole = (props) => {
         </group>
     )
 }
-useGLTF.preload('/lumen_vgs_pack/lumen_vgs_pack.gltf')
+useGLTF.preload('/GameConsole.gltf')
 
 export default GameConsole
