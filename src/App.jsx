@@ -4,8 +4,9 @@ import Hero from "./Sections/Hero.jsx";
 
 const App = () => {
     return (
-        <main className={"max-w-7xl mx-auto bg-amber-50"}>
+        <main className={"max-w-7xl mx-auto"}>
             <NavBar />
+            <Hero />
         </main>
     )
 }
