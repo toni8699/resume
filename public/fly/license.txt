@@ -1,0 +1,11 @@
+Model Information:
+* title:	Fly
+* source:	https://sketchfab.com/3d-models/fly-88b00401be8543f299b8720c2f5bd040
+* author:	Lukas Hahn Graphics (https://sketchfab.com/specter)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Fly" (https://sketchfab.com/3d-models/fly-88b00401be8543f299b8720c2f5bd040) by Lukas Hahn Graphics (https://sketchfab.com/specter) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

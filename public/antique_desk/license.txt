@@ -1,0 +1,11 @@
+Model Information:
+* title:	Antique Desk
+* source:	https://sketchfab.com/3d-models/antique-desk-7418653c1f53481c978bd96b6f19585e
+* author:	Amatsukast (https://sketchfab.com/Amatsukast)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Antique Desk" (https://sketchfab.com/3d-models/antique-desk-7418653c1f53481c978bd96b6f19585e) by Amatsukast (https://sketchfab.com/Amatsukast) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
