@@ -68,20 +68,21 @@ const Hero = () => {
             </div>
         <div className={"w-full h-full absolute inset-0"}>
             <Leva/>
-            <Canvas className={`w-full h-full' }`}>
+            <Canvas className={`w-full h-full ${isRotating? 'cursor-grabbing' : 'cursor-grab' } }`}>
                 <Suspense fallback={<CanvasLoader/>}>
                     <PerspectiveCamera makeDefault position={[0,0,25]}/>
                     <Office
-                        scale={[1.82,1.82,1.82]}
+                        scale={[1.5,1.5,1.5]}
                         position={[0.56,-4,11.2]}
                         rotation={[0.19,-3.5,0]}
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
+
                     />
                     <AirPlane
                         scale={[0.00075, 0.00075, 0.00075]}
-                        position={[controls.positionX,controls.positionY,controls.positionZ]}
-                        rotation={[controls.rotationX,controls.rotationY,controls.rotationZ]}
+                        position={[-1.6,-1,16,7]}
+                        rotation={[0.18,-1.6,0]}
                         isRotating={isRotating}
 
 

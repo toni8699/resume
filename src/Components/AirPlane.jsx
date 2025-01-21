@@ -6,15 +6,25 @@ Source: https://sketchfab.com/3d-models/pixel-plane-da5c802719844a86b9464f73c633
 Title: PIXEL PLANE
 */
 
-import React, { useRef } from 'react'
+import React, {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 const AirPlane = ({isRotating,...props}) =>  {
     const group = useRef()
-const { nodes, materials, animations } = useGLTF('pixel_plane/scene.gltf')
-const { actions } = useAnimations(animations, group)
-return (
-    <group ref={group} {...props} dispose={null}>
+    const AirPlaneRef = useRef();
+    const { nodes, materials, animations } = useGLTF('pixel_plane/scene.gltf')
+    const { actions } = useAnimations(animations, AirPlaneRef);
+    useEffect(() => {
+        if (isRotating) {
+            console.log(actions);
+            actions['ArmatureAction.001'].play();
+            }else{
+            actions['ArmatureAction.001'].stop();
+        }
+    });
+
+    return (
+        <group ref={AirPlaneRef} {...props} >
         <group name="Sketchfab_Scene">
             <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
                 <group name="851ef2b194494e539ad187404fbe584bfbx" rotation={[Math.PI / 2, 0, 0]}>
@@ -39,7 +49,7 @@ return (
             </group>
         </group>
     </group>
-)
+    )
 }
 
 useGLTF.preload('pixel_plane/scene.gltf')
