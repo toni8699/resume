@@ -65,6 +65,9 @@ const Office = ({isRotating, setIsRotating,...props}) => {
             rotationSpeed.current.rotation.x*=dampingFactor;
         }
     })
+    useFrame (()=>{
+
+    })
 
     useEffect(()=>{
         const canvas = gl.domElement;
