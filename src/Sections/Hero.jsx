@@ -58,9 +58,6 @@ const Hero = () => {
     //         }
     //     })
     const isMobile = useMediaQuery({query: '(max-width: 768px)'})
-
-
-
     return (
         <section className={"min-h-screen w-full flex flex-col relative mt-20"}>
             <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 mb-14">
@@ -75,7 +72,7 @@ const Hero = () => {
 
 {/*            </div>*/}
 
-            <div className={"w-full h-full absolute inset-0 border-2"}>
+            <div className={"w-full h-full absolute inset-0 "}>
 
                 <Leva/>
                 <Canvas className={`w-full h-full ${isRotating ? 'cursor-grabbing' : 'cursor-grab'} }`}>

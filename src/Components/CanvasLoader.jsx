@@ -23,7 +23,7 @@ const CanvasLoader = () => {
                 fontWeight:800,
                 textAlign:"center"
             }}
-            >{progress.toFixed(2)}%
+            > Loading{progress.toFixed(2)}%
             </p>
         </Html>
     )

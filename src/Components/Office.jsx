@@ -42,7 +42,7 @@ const Office = ({isRotating, setIsRotating,...props}) => {
         e.preventDefault();
         console.log('mouse move');
         if (isRotating){
-            console.log('isRotating');
+
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
             const deltaX = (clientX - lastX.current)/viewport.width;
             const clientY = e.touches ? e.touches[0].clientY : e.clientY;
