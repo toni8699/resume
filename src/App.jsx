@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from "./Sections/NavBar.jsx";
 import Hero from "./Sections/Hero.jsx";
 import About from "./Sections/About.jsx";
-import Test1 from "./Sections/Test1.jsx";
+import Projects from "./Sections/Projects.jsx";
 
 const App = () => {
     return (
@@ -10,6 +10,7 @@ const App = () => {
             <NavBar />
             <Hero/>
             <About/>
+            <Projects/>
         </main>
     )
 }

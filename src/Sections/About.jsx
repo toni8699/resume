@@ -1,24 +1,37 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Globe from "react-globe.gl";
 import MyGlobe from "../Components/MyGlobe.jsx";
 // import * as data from '/Users/tony/Desktop/resume/src/datasets/ne_110m_populated_places_simple.geojson'
 // import * as data from '/Users/tony/Desktop/resume/src/datasets/ne_110m_admin_0_countries.geojson'
 const About = () => {
+    const [copied, setCopied] = useState(false);
+    const handleCopy = () => {
+        navigator.clipboard.writeText('lehoaikhang8699@gmail.com');
+        setCopied(true);
+        setTimeout( () => {
+            setCopied(false);
+        }, 5000);
+    }
 
     return (
        <section className={'c-space my-20'}>
-           <div className={'grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-6 grid-cols-1 gap-5 h-full'}>
-               <div className={'col-span-1 xl:row-span-3 '}>
-                   <div className={'grid-container'}>
-                       <img src={'/MyFace.JPEG'} className={"rounded-full w-full object-contain sm:h=[276px] h-fit"}/>
+           <div className={'grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-4 grid-cols-1 gap-5 h-full'}>
+               <div className={'col-span-1 xl:row-span-2 '}>
+                   <div className={'grid-container '}>
+                       <img src={'/MyFace.JPEG'} className={"rounded-full w-full object-fit sm:h=[276px] h-fit"}/>
                        <div>
                            <p className={'grid-headtext'}>Hi, I'm Khang</p>
-                           <p className={'grid-subtext'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                               Ab</p>
+                           <p className={'grid-subtext'}>
+                               A third-year Computer Science student at <a target={"_blank"}
+                                                                           className={"hover:text-white "}
+                                                                           href={"https://en.wikipedia.org/wiki/McGill_University"}>
+                               McGill University
+                           </a> in Canada, with interests ranging from optimizing low-level systems to creating
+                               interactive web applications. </p>
                        </div>
                    </div>
                </div>
-               <div className={'col-span-1 xl:row-span-3 '}>
+               <div className={'col-span-1 xl:row-span-2 '}>
                    <div className={'grid-container'}>
                        <div
                            className={" sm:h-[276px] xl:h-[329px] object-contain  h-fit flex align-center justify-center flex-col"}>
@@ -26,7 +39,7 @@ const About = () => {
 
                                <img className={"w-14 h-14"} src="https://techstack-generator.vercel.app/js-icon.svg"
                                     alt="icon"/>
-                               <img src="https://techstack-generator.vercel.app/ts-icon.svg" alt="icon"
+                               <img src="https://techstack-generator.vercel.app/prettier-icon.svg" alt="icon"
                                     className={"w-14 h-14"}/>
                                <img className={"w-14 h-14"} src="https://techstack-generator.vercel.app/react-icon.svg"
                                     alt="icon"/>
@@ -56,26 +69,98 @@ const About = () => {
                        </div>
                        <div>
                            <p className={'grid-headtext'}>Tech Stack</p>
-                           <p className={'grid-subtext'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab
+                           <p className={'grid-subtext'}>
                            </p>
                        </div>
                    </div>
                </div>
-               <div className={"col-span-1 xl:row-span-4"}>
+               <div className={"col-span-1 xl:row-span-2"}>
                    <div className={'grid-container'}>
                        <div className={'rounded-3xl w-full sm:h-[326px] h-fit flex align-center justify-center'}>
                            <MyGlobe/>
-                           <p className={"grid-headtext"}>
-                               Lorem ipsum dolor sit amet
+                       </div>
+                       <div className={''}>
+                           <p className={'grid-headtext'}>
+                               Location
                            </p>
                            <p className={'grid-subtext'}>
-                               Lorem ipsum dolor sit amet
+                               I grew up in Vietnam and I currently study in Montreal, Canada.
                            </p>
+                       </div>
+
+                   </div>
+               </div>
+               <div className={"xl:col-span-2 xl:row-span-2"}>
+
+                   <div className={'grid-container'}>
+                       <p className={'grid-headtext'}>
+                           Hobbies
+                       </p>
+                       <div>
+                           <p className={'grid-subtext mb-1'}>
+                               <p> When I'm not at a computer, you can find me practicing the piano.
+                                   I’ve also dedicated a fair share of time to (admittedly clumsy) attempts at tuning the piano.
+                                   If you want to learn about how it is mathematically impossible to perfectly tune the piano,
+                                   check out <a className={"font-bold hover:text-white"} target={"_blank"} href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video article on the subject.
+                               </p>
+                           </p>
+                           <div className={'flex flex-row gap-5'}>
+                               <video src={"Video/Piano2.mov"} controls className={'w-80 object-contain rounded-bl'}>
+                               </video>
+                               <video src={"Video/Piano3.mov"} controls className={'w-80 object-contain rounded-bl'}>
+                               </video>
+
+
+                           </div>
+
+
                        </div>
 
                    </div>
 
                </div>
+               <div className={"xl:col-span-1 xl:row-span-1"}>
+                   <div className="grid-container">
+                       <div className={'space-y-2 mt-5'}>
+                           <p className={'grid-subtext font-medium text-center'}>
+                               Contact me
+                           </p>
+                           <p className={"grid-subtext"}>
+                               If you want to chat about a project, abstract math,
+                               the meaning of life, classical music, or just want to say hi, feels free to reach out!
+                           </p>
+                           <div className={'copy-container'} onClick={handleCopy}>
+                               <img src={copied ? '/assets/tick.svg' : '/assets/copy.svg'}/>
+                               <p className={'grid-subtext gradient-text font-medium hover:text-white'}>
+                                   lehoaikhang8699@gmail.com
+                               </p>
+                           </div>
+                       </div>
+                   </div>
+
+               </div>
+               <div className={"xl:col-span-1 xl:row-span-1"}>
+                   <div className="grid-container items-center">
+                       <div>
+                           <p className={'grid-subtext font-medium text-center'}>Useful Links</p>
+                           <div className={'flex flex-row justify-center items-center gap-5 mt-20'}>
+                               <a target = {"_blank"} href={"https://github.com/toni8699"}>
+                                   <img src={'/assets/github.svg'} className={'h-7 hover:scale-150'}/>
+                               </a>
+                               <a target ="_blank" href={"https://www.linkedin.com/in/le-khang-455299190/"}>
+                                   <img src={'/assets/Linkedin.png'} className={'h-7 hover:scale-150'}/>
+                               </a>
+                               <a target ="_blank" href={"https://www.instagram.com/hoaikhang_le/"}>
+                                   <img src={'/assets/instagram.png'} className={'h-7 hover:scale-150'}/>
+
+                               </a>
+                           </div>
+
+                       </div>
+                   </div>
+
+               </div>
+
            </div>
 
 

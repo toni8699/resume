@@ -65,11 +65,6 @@ const Hero = () => {
                 <h2 className={"text-gray_gradient sm:text-6xl text-4xl font-semibold font-generalsans text-center"}>And
                     I love programming</h2>
             </div>
-{/*            <div className=" text-white aboslute top-28 left-0 right-0 z-10 flex  items-center*/}
-{/*justify-center">*/}
-
-
-{/*            </div>*/}
 
             <div className={"w-full h-full absolute inset-0 "}>
 
@@ -101,7 +96,7 @@ const Hero = () => {
 
                         />
                         <ambientLight color={"accent-amber-400"} intensity={1} position={[0, 0, 0]}/>
-                        <directionalLight color={"white"} position={[3, 0, 3]} intensity={7}/>
+                        <directionalLight color={"white"} position={[3, 10, 3]} intensity={3}/>
 
                     </Suspense>
 
