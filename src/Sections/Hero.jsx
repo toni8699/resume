@@ -8,7 +8,6 @@ import {useMediaQuery} from "react-responsive";
 import Office from "../Components/Office.jsx";
 import AirPlane from "../Components/AirPlane.jsx";
 
-import Butterfly from "../Components/Butterfly.jsx";
 
 const Hero = () => {
     const [isRotating, setIsRotating] = useState()
@@ -78,15 +77,15 @@ const Hero = () => {
                 <Canvas className={`w-full h-full ${isRotating ? 'cursor-grabbing' : 'cursor-grab'} }`}>
                     <Suspense fallback={<CanvasLoader/>}>
                         <PerspectiveCamera makeDefault position={[0, 0, 25]}/>=
-                        <Butterfly
-                            scale={[0.0075, 0.0075, 0.0075]}
-                            // position={[-6.7,-5.5,10]}
-                            position={isMobile ? [-4, -5.5, 12] : [-6.7, -5.5, 10]}
-                            // rotation={[-4.9,3.8,3.2]}
-                            rotation={[1.11, 2.87, -3.3]}
-                        />
+                        {/*<Butterfly*/}
+                        {/*    scale={[0.0075, 0.0075, 0.0075]}*/}
+                        {/*    // position={[-6.7,-5.5,10]}*/}
+                        {/*    position={isMobile ? [-4, -5.5, 12] : [-6.7, -5.5, 10]}*/}
+                        {/*    // rotation={[-4.9,3.8,3.2]}*/}
+                        {/*    rotation={[1.11, 2.87, -3.3]}*/}
+                        {/*/>*/}
                         <Office
-                            scale={[1.5, 1.5, 1.5]}
+                            scale={[1.75, 1.5, 1.5]}
                             position={[0.56, -4, 11.2]}
                             rotation={[0.19, -3.5, 0]}
                             isRotating={isRotating}
@@ -101,12 +100,12 @@ const Hero = () => {
 
 
                         />
-                        <ambientLight color={"teal"} intensity={3} position={[0, 0, 0]}/>
-                        <directionalLight color={"white"} position={[3, 10, 3]} intensity={7}/>
+                        <ambientLight color={"accent-amber-400"} intensity={1} position={[0, 0, 0]}/>
+                        <directionalLight color={"white"} position={[3, 0, 3]} intensity={7}/>
 
                     </Suspense>
 
-                </Canvas>
+                </Canvas>xx
 
 
             </div>
