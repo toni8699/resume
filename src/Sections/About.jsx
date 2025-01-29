@@ -90,7 +90,7 @@ const About = () => {
 
                    </div>
                </div>
-               <div className={"xl:col-span-2 xl:row-span-2"}>
+               <div className={"xl:col-span-2 xl:row-span-2 sm:col-span-1"}>
 
                    <div className={'grid-container'}>
                        <p className={'grid-headtext'}>
@@ -99,17 +99,27 @@ const About = () => {
                        <div>
                            <p className={'grid-subtext mb-1'}>
                                <p> When I'm not at a computer, you can find me practicing the piano.
-                                   I’ve also dedicated a fair share of time to (admittedly clumsy) attempts at tuning the piano.
-                                   If you want to learn about how it is mathematically impossible to perfectly tune the piano,
-                                   check out <a className={"font-bold hover:text-white"} target={"_blank"} href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video article on the subject.
+                                   I’ve also dedicated a fair share of time to (admittedly clumsy) attempts at tuning
+                                   the piano.
+                                   If you want to learn about how it is mathematically impossible to perfectly tune the
+                                   piano,
+                                   check out <a className={"font-bold hover:text-white"} target={"_blank"}
+                                                href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video
+                                   article on the subject.
                                </p>
                            </p>
-                           <div className={'flex flex-row gap-5'}>
-                               <video src={"Video/Piano2.mov"} controls className={'w-80 object-contain rounded-bl'}>
-                               </video>
-                               <video src={"Video/Piano3.mov"} controls className={'w-80 object-contain rounded-bl'}>
-                               </video>
+                           <div className={'flex sm:flex-row flex-col gap-5'}>
+                               <div className={'flex flex-row gap-5'}>
+                                   <video src={"Video/Piano2.mov"} controls
+                                          className={'w-80 object-contain rounded-bl'}>
+                                   </video>
 
+                               </div>
+                               <div className={'flex flex-row gap-5'}>
+                                   <video src={"Video/Piano3.mov"} controls
+                                          className={'w-80 object-contain rounded-bl'}>
+                                   </video>
+                               </div>
 
                            </div>
 
@@ -126,7 +136,7 @@ const About = () => {
                                Contact me
                            </p>
                            <p className={"grid-subtext"}>
-                               If you want to chat about a project, abstract math,
+                           If you want to chat about a project, abstract math,
                                the meaning of life, classical music, or just want to say hi, feels free to reach out!
                            </p>
                            <div className={'copy-container'} onClick={handleCopy}>
