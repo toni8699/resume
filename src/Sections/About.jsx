@@ -68,9 +68,13 @@ const About = () => {
                            </div>
                        </div>
                        <div>
-                           <p className={'grid-headtext'}>Tech Stack</p>
+                           <p className={'grid-headtext'}>Technologies</p>
                            <p className={'grid-subtext'}>
-                           </p>
+                               Experienced in multiple programming languages and web development
+                                   frameworks.
+                               Proficient in
+                                   version control, development tools, and working across various platforms.</p>
+
                        </div>
                    </div>
                </div>
@@ -84,7 +88,8 @@ const About = () => {
                                Location
                            </p>
                            <p className={'grid-subtext'}>
-                               I grew up in Vietnam and I currently study in Montreal, Canada.
+                               I grew up in Vietnam but you can find me in Montreal during most of the year. I also travel
+                                  frequently to other cities in Canada and the US to visit friends and family.
                            </p>
                        </div>
 
@@ -99,25 +104,23 @@ const About = () => {
                        <div>
                            <p className={'grid-subtext mb-1'}>
                                <p> When I'm not at a computer, you can find me practicing the piano.
-                                   I’ve also dedicated a fair share of time to (admittedly clumsy) attempts at tuning
+                                   I’ve also dedicated a fair share of time to (clumsily) attempts at tuning
                                    the piano.
-                                   If you want to learn about how it is mathematically impossible to perfectly tune the
-                                   piano,
-                                   check out <a className={"font-bold hover:text-white"} target={"_blank"}
-                                                href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video
-                                   article on the subject.
+                                   Here's me playing the piano that I tuned myself, as for the excuse as to why it sounds
+                                   like a mess, check out <a className={"font-bold hover:text-white"} target={"_blank"} href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video
+                                   article on why it is impossible to perfectly tune a piano.
                                </p>
                            </p>
-                           <div className={'flex sm:flex-row flex-col gap-5'}>
+                           <div className={'flex sm:flex-row flex-col justify-between gap-5'}>
                                <div className={'flex flex-row gap-5'}>
                                    <video src={"Video/Piano2.mov"} controls
-                                          className={'w-80 object-contain rounded-bl'}>
+                                          className={'w-80 object-contain border border-black-200 rounded-lg'}>
                                    </video>
 
                                </div>
                                <div className={'flex flex-row gap-5'}>
                                    <video src={"Video/Piano3.mov"} controls
-                                          className={'w-80 object-contain rounded-bl'}>
+                                          className={'w-80 object-contain border border-black-200 rounded-lg'}>
                                    </video>
                                </div>
 
@@ -136,8 +139,8 @@ const About = () => {
                                Contact me
                            </p>
                            <p className={"grid-subtext"}>
-                           If you want to chat about a project, abstract math,
-                               the meaning of life, classical music, or just want to say hi, feels free to reach out!
+                           If you want to chat about a project, abstract math, classical music, literature,
+                               the meaning of life, or just want to say hi, feels free to reach out!
                            </p>
                            <div className={'copy-container'} onClick={handleCopy}>
                                <img src={copied ? '/assets/tick.svg' : '/assets/copy.svg'}/>

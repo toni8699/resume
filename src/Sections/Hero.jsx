@@ -70,15 +70,9 @@ const Hero = () => {
 
                 <Leva/>
                 <Canvas className={`w-full h-full ${isRotating ? 'cursor-grabbing' : 'cursor-grab'} }`}>
+                    <PerspectiveCamera makeDefault position={[0, 0, 25]}/>
+
                     <Suspense fallback={<CanvasLoader/>}>
-                        <PerspectiveCamera makeDefault position={[0, 0, 25]}/>=
-                        {/*<Butterfly*/}
-                        {/*    scale={[0.0075, 0.0075, 0.0075]}*/}
-                        {/*    // position={[-6.7,-5.5,10]}*/}
-                        {/*    position={isMobile ? [-4, -5.5, 12] : [-6.7, -5.5, 10]}*/}
-                        {/*    // rotation={[-4.9,3.8,3.2]}*/}
-                        {/*    rotation={[1.11, 2.87, -3.3]}*/}
-                        {/*/>*/}
                         <Office
                             scale={[1.75, 1.5, 1.5]}
                             position={[0.56, -4, 11.2]}
@@ -95,12 +89,14 @@ const Hero = () => {
 
 
                         />
-                        <ambientLight color={"accent-amber-400"} intensity={1} position={[0, 0, 0]}/>
-                        <directionalLight color={"white"} position={[3, 10, 3]} intensity={3}/>
+
+
 
                     </Suspense>
+                    <ambientLight color={"accent-amber-400"} intensity={1} position={[0, 0, 0]}/>
+                    <directionalLight color={"white"} position={[3, 10, 3]} intensity={3}/>
 
-                </Canvas>xx
+                </Canvas>
 
 
             </div>

@@ -1,11 +1,17 @@
-import React, {useState} from 'react'
-import {myProjects} from "../constants/index.js";
+import React, {Suspense, useState} from 'react'
+import {projects} from "../constants/index.js";
+import {Canvas} from "@react-three/fiber";
+import {Center, OrbitControls} from "@react-three/drei";
+import CanvasLoader from "../Components/CanvasLoader.jsx";
+import ProjectDemo from "../Components/ProjectDemo.jsx";
+import Cat from "../Components/Cat.jsx";
+import Laptop from "../Components/Laptop.jsx";
 
 const Projects = () => {
-    // const currentProject = myProjects[0];
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
     console.log(selectedProjectIndex);
-   const count = myProjects.length;
+   const count = projects.length;
+   const currentProject = projects[selectedProjectIndex];
 
     const handleNextProject = (direction) => {
         if (direction === 'prev') {
@@ -17,7 +23,7 @@ const Projects = () => {
 
     return (
         <section className={"c-space my-20"}>
-            <p className ="head-text">
+            <p className="head-text">
                 Projects
             </p>
             <div className={"grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full"}>
@@ -25,20 +31,22 @@ const Projects = () => {
                     'shadow-black-200'}>
                     <div className={"absolute top-0 right-0"}>
                         <img className={'h-96 w-full object-cover' +
-                            'rounded-xl'} src={myProjects[selectedProjectIndex].spotlight} alt ={"spotlight"} />
+                            'rounded-xl'} src={currentProject.spotlight} alt={"spotlight"}/>
                     </div>
-                    <div style ={myProjects[selectedProjectIndex].logoStyle } className={'flex justify-center w-14 rounded-lg items-center p-2 '} >
-                        <img className ="w-10 h-10 object- shadow-sm rounded-lg" src={myProjects[selectedProjectIndex].logo} alt={"logo"} />
+                    <div style={currentProject.logoStyle}
+                         className={'flex justify-center w-14 rounded-lg items-center p-2 '}>
+                        <img className="w-10 h-10 object- shadow-sm rounded-lg"
+                             src={currentProject.logo} alt={"logo"}/>
                     </div>
-                    <div className={'flex flex-col text-white-600 my-600 gap-5'}>
+                    <div className={'flex flex-col text-white-600 my-600 gap-5 min-h-52'}>
                         <p className={'text-white text-2xl font-semibold'}>
-                            {myProjects[selectedProjectIndex].title}
+                            {currentProject.title}
                         </p>
                         <p className={'animatedText'}>
-                            {myProjects[selectedProjectIndex].desc}
+                            {currentProject.desc}
                         </p>
-                        <p className={'animatedText'} >
-                            {myProjects[selectedProjectIndex].subdesc}
+                        <p className={'animatedText'}>
+                            {currentProject.subdesc}
                         </p>
 
                     </div>
@@ -50,16 +58,18 @@ const Projects = () => {
 
                             <div className={'flex items-center justify-between flex-wrap gap-5'}>
                                 <div className='flex items-center gap-3'>
-                                    {myProjects[selectedProjectIndex].tags.map((tag, index) => (
+                                    {currentProject.tags.map((tag, index) => (
                                         <div key={index} className={'tech-logo'}>
                                             <img src={tag.path} alt={tag.name}/>
                                         </div>
                                     ))}
                                 </div>
-                                <a href={myProjects[selectedProjectIndex].href} target={'_blank'} className={' flex items-center gap-2 cursor-pointer text-white-600 hover:text-white'}>
-                                    <p> Link to project</p>
-                                    <img src ='assets/arrow-up.png' className={'h-3 w-3'}/>
-                                </a>
+                                    <a href={currentProject.href} target={'_blank'}
+                                       className={' flex items-center gap-2 '}>
+                                        <p className={' cursor-pointer text-white-600 hover:text-white'}> Link to
+                                            project</p>
+                                        <img src='assets/arrow-up.png' className={'h-3 w-3'}/>
+                                    </a>
                             </div>
                             <div className={"flex items-center mt-7 "}>
                                 <button className={'arrow-btn'} onClick={() => handleNextProject("prev")}>
@@ -68,14 +78,33 @@ const Projects = () => {
                                 <button className={'arrow-btn'} onClick={() => handleNextProject("next")}>
                                     <img src='/assets/right-arrow.png'/>
                                 </button>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
+                <div className={"border border-black-200 bg-black-200 rounded-lg h-96 md:h-full"}>
+                    <Canvas>
+                        <ambientLight intensity={Math.PI}/>
+                        <directionalLight position={[0,0,0]} intensity={5}/>
+                        <Suspense fallback={<CanvasLoader/>}>
+                                    <group
+                                        position={[0, -3, 0]}
+                                        scale={2}
+                                    >
+                                        <ProjectDemo
+                                            texture={currentProject.texture}
+                                        />
+
+                                    </group>
+                            </Suspense>
+
+                        <OrbitControls enableZoom={false}  minPolarAngle={Math.PI/2} maxPolarAngle={Math.PI/2}/>
+
+                    </Canvas>
+                </div>
 
             </div>
+
 
         </section>
     )
