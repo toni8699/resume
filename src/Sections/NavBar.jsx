@@ -11,6 +11,7 @@ const NavItems = () => {
                 <li key={link.id} className={"nav-li"}>
                     <a href={link.href} className={"nav-li_a"}
                        onClick={() => {
+
                        }}>
                         {link.name}
                     </a>
@@ -32,7 +33,6 @@ const NavBar = () => {
                     <a href={"./"}>
                         <img src={"assets/monogram-hq.svg"} alt={"logo"}
                              className={'w-12 h-12 m-0 object-contain hover:scale-150'}/>
-                        {/*<h3 className={"font-handwriting gradient-text hover:text-white"}> Khang Le</h3>*/}
                     </a>
 
                     <button onClick={toggleMenu}

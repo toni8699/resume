@@ -11,7 +11,7 @@ const Timeline = () => {
         <section className={'c-space my-20'} >
             <div className={'w-full text-white-600'}>
                 <h3 className={'head-text'}>
-                    Timeline
+                    Educational Timeline
                 </h3>
                 <div className={'work-container'}>
                     <div className={'work-canvas'}>
@@ -40,7 +40,7 @@ const Timeline = () => {
                                      onPointerOver = {() => setAnimationName(animation)} onPointerOut={() => setAnimationName('m_Shrek_idle3_Loop')}   >
                                     <div className={'flex flex-col h-full justify-start items-center py-2'}>
                                         <div className={'work-content_logo'}>
-                                            <img className={'w-full h-full'} src={icon} alt={'logo'}/>
+                                            <img className={'w-full h-full rounded-lg'} src={icon} alt={'logo'}/>
                                         </div>
                                         <div className={'work-content_bar'}/>
                                     </div>
@@ -62,6 +62,7 @@ const Timeline = () => {
                         </div>
                     </div>
                 </div>
+
 
             </div>
 

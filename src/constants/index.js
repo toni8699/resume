@@ -11,14 +11,19 @@ export const navLinks = [
     },
     {
         id: 3,
-        name: 'Work',
-        href: '#work',
+        name: 'Projects',
+        href: '#projects',
     },
     {
         id: 4,
         name: 'Contact',
         href: '#contact',
     },
+    {
+        id: 5,
+        name: 'CV',
+        href: './CV.pdf',
+    }
 ];
 
 
@@ -59,8 +64,8 @@ export const projects = [
         title: 'Chess',
         desc: 'A chess game built with Java and JavaFX libraries.',
         subdesc: 'A chess game created from scratch.',
-        href: 'https://github.com/toni8699/McGameJame2020',
-        texture: 'textures/project/chess.mp4',
+        href: 'https://github.com/toni8699/Chess',
+        texture: 'textures/project/Chess.mp4',
         logo: '/assets/Pawn.png',
         logoStyle: {
             backgroundColor: '#13202F',
@@ -115,7 +120,7 @@ export const projects = [
         desc: 'This project is a template for a Makefile and C project.',
         subdesc:
             'I created this project to help me learn how to use Makefiles and organize C projects.',
-        href: 'https://github.com/toni8699/McGameJame2020',
+        href: 'https://github.com/toni8699/C_template',
         texture: '/textures/project/makefile.mp4',
         logo: '/assets/C_Logo.png',
         logoStyle: {
@@ -147,34 +152,34 @@ export const timeline= [
         name: 'McGill University',
         pos: 'Computer Science and Mathematics',
         duration: '2024 - Present',
-        title: "Re-admitted to McGill University for a 3rd year of study with a focus on computer science and mathematics. ",
-        icon: '/assets/framer.svg',
+        title: "Re-admitted to McGill University for a Computer Science degree.",
+        icon: '/assets/mcgill.png',
         animation: 'm_shrek_roar2',
     },
     {
         id: 2,
-        name: 'Figma',
-        pos: 'Web Developer',
-        duration: '2020 - 2022',
-        title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-        icon: '/assets/figma.svg',
+        name: 'The Enigmatic Disappearance ',
+        pos: 'Piano teacher, English teacher, freelancer',
+        duration: '2021 - 2024',
+        title: "Vanished from the academic world and re-emerged with new skills, stories, and a deep appreciation for minority languages, cultures, and the art of survival.",
+        icon: '/assets/tree.png',
         animation: 'm_Shrek_int_footTap1',
     },
-    {
-        id: 3,
-        name: 'McGill University',
-        pos: 'Computer Science and Mathematics',
-        duration: '2019 - 2021',
-        title:'',
-        icon: '/assets/notion.svg',
-        animation: 'm_Shrek_int_head1',
-    }, {
+     {
         id: 4,
-        name: 'McGill University',
+        name: 'Compete McGill',
+        pos: 'Compete developer',
+        duration: '2020 - 2021',
+        title:'Maintain the website of the competitive programming club.',
+        icon: '/assets/cp.jpeg',
+        animation: 'm_Shrek_wthr_rain_AW',
+    },{
+        id: 3,
+        name: 'McGill Univeristy',
         pos: 'Computer Science and Mathematics',
         duration: '2019 - 2021',
-        title:'',
-        icon: '/assets/notion.svg',
-        animation: 'm_Shrek_wthr_rain_AW',
-    },
+        title:'Started my studies at McGill University.',
+        icon: '/assets/mcgill.png',
+        animation: 'm_Shrek_int_head1',
+    }
 ];

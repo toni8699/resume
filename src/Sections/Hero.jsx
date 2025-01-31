@@ -58,7 +58,7 @@ const Hero = () => {
     //     })
     const isMobile = useMediaQuery({query: '(max-width: 768px)'})
     return (
-        <section className={"min-h-screen w-full flex flex-col relative mt-20"}>
+        <section id={'home'} className={"min-h-screen w-full flex flex-col relative mt-20"}>
             <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 mb-14">
                 <p className={"sm:text-2xl text-xl font-medium font-generalsans text-white text-center "}>Hi I'm
                     Khang <span className={"waving-hand"}>👋🏼</span></p>

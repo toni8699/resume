@@ -14,7 +14,10 @@ const About = () => {
     }
 
     return (
-       <section className={'c-space my-20'}>
+       <section  id ={"about"} className={'c-space my-20'}>
+           <div>
+               <h3 className={'head-text mb-7'}> About Me</h3>
+           </div>
            <div className={'grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-4 grid-cols-1 gap-5 h-full'}>
                <div className={'col-span-1 xl:row-span-2 '}>
                    <div className={'grid-container '}>

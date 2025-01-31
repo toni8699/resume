@@ -4,8 +4,6 @@ import {Canvas} from "@react-three/fiber";
 import {Center, OrbitControls} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
 import ProjectDemo from "../Components/ProjectDemo.jsx";
-import Cat from "../Components/Cat.jsx";
-import Laptop from "../Components/Laptop.jsx";
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
@@ -22,7 +20,7 @@ const Projects = () => {
     }
 
     return (
-        <section className={"c-space my-20"}>
+        <section id={'projects'} className={"c-space my-20"}>
             <p className="head-text">
                 Projects
             </p>

@@ -10,7 +10,7 @@ const Footer = () => {
                 </p>
                 <p>|</p>
                 <p>
-                    Special thanks to <a className={'hover:text-white'} href={"https://www.jsmastery.pro"}>Adrian @ Javascript Mastery for the threeJS course</a>
+                    Special thanks to <a className={'hover:text-white'} href={"https://www.jsmastery.pro"}>Adrian @ Javascript Mastery</a>
                 </p>
             </div>
 
