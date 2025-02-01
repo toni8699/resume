@@ -22,7 +22,7 @@ export const navLinks = [
     {
         id: 5,
         name: 'CV',
-        href: './CV.pdf',
+        href: './Resume 2025 SWE.pdf',
     }
 ];
 

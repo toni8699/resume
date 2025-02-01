@@ -14,9 +14,9 @@ const Donkey =({animationName = 'm_shrek_idle6' , ...props}) => {
     const { nodes, materials, animations } = useGLTF('models/shrek.glb')
     const { actions } = useAnimations(animations, group)
 
-    for (const animation in actions) {
-        console.log(animation);
-    }
+    // for (const animation in actions) {
+    //     // console.log(animation);
+    // }
     useEffect(() => {
         if (actions[animationName]) {
             actions[animationName].reset ().fadeIn(0.5).play();

@@ -25,11 +25,9 @@ const About = () => {
                        <div>
                            <p className={'grid-headtext'}>Hi, I'm Khang</p>
                            <p className={'grid-subtext'}>
-                               A third-year Computer Science student at <a target={"_blank"}
-                                                                           className={"hover:text-white "}
-                                                                           href={"https://en.wikipedia.org/wiki/McGill_University"}>
-                               McGill University
-                           </a> in Canada, with interests ranging from optimizing low-level systems to creating
+                               A third-year Computer Science student at
+                               <a target={"_blank"} className={"hover:text-white "} href={"https://en.wikipedia.org/wiki/McGill_University"}>
+                               McGill University</a> in Canada, with interests ranging from optimizing low-level systems to creating
                                interactive web applications. </p>
                        </div>
                    </div>
@@ -107,7 +105,7 @@ const About = () => {
                        <div>
                            <p className={'grid-subtext mb-1'}>
                                <p> When I'm not at a computer, you can find me practicing the piano.
-                                   I’ve also dedicated a fair share of time to (clumsily) attempts at tuning
+                                   I’ve also dedicated a fair share of time to (clumsily) tuning
                                    the piano.
                                    Here's me playing the piano that I tuned myself, as for the excuse as to why it sounds
                                    like a mess, check out <a className={"font-bold hover:text-white"} target={"_blank"} href={"https://www.sciencealert.com/watch-the-physics-of-music-and-why-it-s-impossible-to-tune-a-piano"}>this</a> video
@@ -143,7 +141,7 @@ const About = () => {
                            </p>
                            <p className={"grid-subtext"}>
                            If you want to chat about a project, abstract math, classical music, literature,
-                               the meaning of life, or just want to say hi, feels free to reach out!
+                               the meaning of life, or just want to say hi, feel free to reach out!
                            </p>
                            <div className={'copy-container'} onClick={handleCopy}>
                                <img src={copied ? '/assets/tick.svg' : '/assets/copy.svg'}/>

@@ -1,13 +1,13 @@
 import React, {Suspense, useState} from 'react'
 import {projects} from "../constants/index.js";
 import {Canvas} from "@react-three/fiber";
-import {Center, OrbitControls} from "@react-three/drei";
+import { OrbitControls} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
 import ProjectDemo from "../Components/ProjectDemo.jsx";
+import Tooltip from '@mui/material/Tooltip';
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-    console.log(selectedProjectIndex);
    const count = projects.length;
    const currentProject = projects[selectedProjectIndex];
 
@@ -57,12 +57,15 @@ const Projects = () => {
                             <div className={'flex items-center justify-between flex-wrap gap-5'}>
                                 <div className='flex items-center gap-3'>
                                     {currentProject.tags.map((tag, index) => (
-                                        <div key={index} className={'tech-logo'}>
-                                            <img src={tag.path} alt={tag.name}/>
-                                        </div>
+                                        <Tooltip  key = {index} title={tag.name}>
+                                            <div key={index} className={'tech-logo'}>
+                                                <img src={tag.path} alt={tag.name}/>
+                                            </div>
+                                        </Tooltip>
+
                                     ))}
                                 </div>
-                                    <a href={currentProject.href} target={'_blank'}
+                                <a href={currentProject.href} target={'_blank'}
                                        className={' flex items-center gap-2 '}>
                                         <p className={' cursor-pointer text-white-600 hover:text-white'}> Link to
                                             project</p>

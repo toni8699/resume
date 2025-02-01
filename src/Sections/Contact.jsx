@@ -54,9 +54,9 @@ const Contact = () => {
                         Contact Me
                     </h3>
                     <p className={'text-lg text-white-600'}>
-                        lorem ipsum dolor sit amet
+                        Wanna chat? Drop me a line!
                     </p>
-                    <form ref={formRef} onSubmit ={handleSubmit} className={'mt-12 flex flex-col space-y-7'}>
+                    <form ref={formRef} onSubmit ={handleSubmit} className={'mt-7 flex flex-col space-y-7'}>
 
                         <label className={'space-y-3'}>
                             <span className={'field-label'}>

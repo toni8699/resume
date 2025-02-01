@@ -1,6 +1,6 @@
 import React, {Suspense, useState} from 'react'
 import {Canvas} from "@react-three/fiber";
-import {PerspectiveCamera,} from "@react-three/drei";
+import {OrbitControls, PerspectiveCamera,} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
 import {Leva, useControls} from "leva";
 import {useMediaQuery} from "react-responsive";
@@ -73,32 +73,28 @@ const Hero = () => {
                     <PerspectiveCamera makeDefault position={[0, 0, 25]}/>
 
                     <Suspense fallback={<CanvasLoader/>}>
-                        <Office
-                            scale={[1.75, 1.5, 1.5]}
-                            position={[0.56, -4, 11.2]}
-                            rotation={[0.19, -3.5, 0]}
-                            isRotating={isRotating}
-                            setIsRotating={setIsRotating}
+                        <group
+                            scale ={isMobile ? 0.75 : 1}
+                        >
+                            <Office
+                                scale={[1.75, 1.5, 1.5]}
+                                position={[0.56, -4, 11.2]}
+                                rotation={[0.19, -3.5, 0]}
+                                isRotating={isRotating}
+                                setIsRotating={setIsRotating}
 
-                        />
-                        <AirPlane
-                            scale={[0.00075, 0.00075, 0.00075]}
-                            position={[-1.6, -1, 16, 7]}
-                            rotation={[0.18, -1.6, 0]}
-                            isRotating={isRotating}
-
-
-                        />
-
-
-
+                            />
+                            <AirPlane
+                                scale={[0.00075, 0.00075, 0.00075]}
+                                position={[-1.6, -1, 16, 7]}
+                                rotation={[0.18, -1.6, 0]}
+                                isRotating={isRotating}
+                            />
+                        </group>
                     </Suspense>
                     <ambientLight color={"accent-amber-400"} intensity={1} position={[0, 0, 0]}/>
                     <directionalLight color={"white"} position={[3, 10, 3]} intensity={3}/>
-
                 </Canvas>
-
-
             </div>
         </section>
     )

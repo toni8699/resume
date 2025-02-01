@@ -24,38 +24,32 @@ const Office = ({isRotating, setIsRotating,...props}) => {
     const handleMouseDown=(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        console.log('handleMouseDown');
+        // console.log('handleMouseDown');
         setIsRotating(true);
         lastX.current = e.touches ? e.touches[0].clientX : e.clientX;
         lastY.current = e.touches ? e.touches[0].clientY : e.clientY;
-        // console.log('cursor x',lastX.current);
-        // console.log('cursor y',lastY.current);
+
     }
     const handleMouseUp=(e)=>{
         e.stopPropagation();
         e.preventDefault();
-        console.log('mouse up');
+        // console.log('mouse up');
         setIsRotating(false);
     }
-    const handleMouseMove=(e)=>{
+    const handleMouseMove = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        console.log('mouse move');
-        if (isRotating){
-
+        if (isRotating) {
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            const deltaX = (clientX - lastX.current)/viewport.width;
+            const deltaX = (clientX - lastX.current) / viewport.width;
             const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-            const deltaY = (clientY - lastY.current)/viewport.height;
-            //Y
-            rotationSpeed.current.rotation.y+= Math.PI*deltaX*0.01;
-            //X
-            rotationSpeed.current.rotation.x+= Math.PI*deltaY*0.0004;
-            // console.log('rotation y',rotationSpeed.current.rotation.x);
+            const deltaY = (clientY - lastY.current) / viewport.height;
+            rotationSpeed.current.rotation.y += Math.PI * deltaX * 0.01;
+            rotationSpeed.current.rotation.x += Math.PI * deltaY * 0.0004;
             lastX.current = clientX;
-            // console.log('last x',lastX.current);
+            lastY.current = clientY;
         }
-    }
+    };
     useFrame (()=>{
         if (isRotating){
             OfficeRef.current.rotation.y+=rotationSpeed.current.rotation.y;

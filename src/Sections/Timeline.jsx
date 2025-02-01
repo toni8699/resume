@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, {Suspense, useState} from 'react'
 import {timeline} from "../constants/index.js";
 import {Canvas} from "@react-three/fiber";
-import Cat from "../Components/Cat.jsx";
 import {OrbitControls} from "@react-three/drei";
 import Donkey from "../Components/Donkey.jsx";
+import CanvasLoader from "../Components/CanvasLoader.jsx";
 
 const Timeline = () => {
     const [animationName, setAnimationName] = useState()
@@ -11,21 +11,24 @@ const Timeline = () => {
         <section className={'c-space my-20'} >
             <div className={'w-full text-white-600'}>
                 <h3 className={'head-text'}>
-                    Educational Timeline
+                    My Timeline
                 </h3>
                 <div className={'work-container'}>
-                    <div className={'work-canvas'}>
+                    <div className={'work-canvas md:h-full h-96'}>
                         <Canvas>
+                            <Suspense fallback={CanvasLoader} >
+                                <Donkey
+                                    scale={1.5}
+                                    position={[0,-3,0]}
+                                    rotation={[0,160,0]}
+                                    animationName={animationName}
+
+                                />
+                            </Suspense>
                             <ambientLight intensity={1}/>
                             <spotLight intensity={0.5} angle={0.1} penumbra={1} position={[10, 10, 10]}/>
                             <directionalLight position={[10, 10, 10]} intensity={1.5}/>
-                            <Donkey
-                                scale={1.5}
-                                position={[0,-3,0]}
-                                rotation={[0,160,0]}
-                                animationName={animationName}
 
-                            />
                             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI/2} />
 
                         </Canvas>

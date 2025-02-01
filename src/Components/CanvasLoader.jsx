@@ -7,13 +7,7 @@ const CanvasLoader = () => {
         <Html
         as ="div"
         center
-        style={{
-            display:"flex",
-            justifyContent:"center",
-            alignItems:"center",
-            flexDirection:"column"
-        }}
-        >
+        style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
             <span className="canvas-loader"></span>
             <p
             style={{
@@ -23,7 +17,7 @@ const CanvasLoader = () => {
                 fontWeight:800,
                 textAlign:"center"
             }}
-            > Loading{progress.toFixed(2)}%
+            > Loading {progress.toFixed(2)}%
             </p>
         </Html>
     )
