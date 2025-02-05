@@ -32,7 +32,7 @@ export const projects = [
     {
         title: "Can't go back",
         desc: 'A zombie-themed survival game built with custom digital assets using Unity and C#.',
-        subdesc: 'Created for McGameJam, this project won the Special Participant Favorite Award based on community voting.',
+        subdesc: '2-D zombie-themed game featuring custom digital assets, collision detection, and player movement.',
         href: 'https://github.com/toni8699/McGameJame2020',
         texture: '/textures/project/game.mp4',
         logo: '/Pics/gamejamFarm.png',
@@ -63,7 +63,8 @@ export const projects = [
     {
         title: 'Chess',
         desc: 'A chess game built with Java and JavaFX libraries.',
-        subdesc: 'A chess game created from scratch.',
+        subdesc: 'A fully functional chess game built from scratch in Java, ' +
+            'featuring an intuitive UI, valid move enforcement, and game rules implementation, including check, checkmate, and stalemate detection. The game supports both player vs. player and player vs. AI modes, with a structured codebase following object-oriented principles.',
         href: 'https://github.com/toni8699/Chess',
         texture: 'textures/project/Chess.mp4',
         logo: '/assets/Pawn.png',
@@ -84,7 +85,7 @@ export const projects = [
 
     {
         title: 'Personal Website',
-        desc: 'My personal portfolio website made with React.js and Three.js.',
+        desc: 'My personal portfolio website made with React.js and Three.js. It features a responsive design, interactive 3D animations, dynamic resume section and email contact form.',
         subdesc: "Well, this is technically not a project, but it took me a while to make, so I'll put it in here anyway.",
         href: './',
         texture: '/textures/project/resume.mp4',
@@ -117,9 +118,9 @@ export const projects = [
     },
     {
         title: 'Makefile and C Project Template',
-        desc: 'This project is a template for a Makefile and C project.',
+        desc: 'Template for a Makefile and C project.',
         subdesc:
-            'I created this project to help me learn how to use Makefiles and organize C projects.',
+            'A well-structured and easy-to-use template Makefile for small to medium-sized C project.',
         href: 'https://github.com/toni8699/C_template',
         texture: '/textures/project/makefile.mp4',
         logo: '/assets/C_Logo.png',
