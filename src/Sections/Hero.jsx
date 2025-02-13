@@ -4,10 +4,12 @@ import {OrbitControls, PerspectiveCamera,} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
 import {Leva, useControls} from "leva";
 import {useMediaQuery} from "react-responsive";
-
+import Typewriter from 'typewriter-effect';
 import Office from "../Components/Office.jsx";
 import AirPlane from "../Components/AirPlane.jsx";
-
+import {motion} from "motion/react";
+import {SectionWrapper} from "../hoc";
+import {fadeIn, textVariant} from "../utils/motion";
 
 const Hero = () => {
     const [isRotating, setIsRotating] = useState()
@@ -59,12 +61,26 @@ const Hero = () => {
     const isMobile = useMediaQuery({query: '(max-width: 768px)'})
     return (
         <section id={'home'} className={"min-h-screen w-full flex flex-col relative mt-20"}>
-            <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 mb-14">
-                <p className={"sm:text-2xl text-xl font-medium font-generalsans text-white text-center "}>Hi I'm
-                    Khang <span className={"waving-hand"}>👋🏼</span></p>
-                <h2 className={"text-gray_gradient sm:text-6xl text-4xl font-semibold font-generalsans text-center"}>And
-                    I love programming</h2>
-            </div>
+            <motion.div variants={textVariant()} className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 mb-14">
+                <motion.h1  className={"sm:text-2xl text-3xl font-medium text-center font-generalsans text-white "}>Hi I'm
+                    Khang <span className={"waving-hand"}>👋🏼</span></motion.h1>
+                <motion.p className={`text-white text-xl sm:text-2xl text-center font-medium font-generalsans `}>
+                    and I am a
+                </motion.p>
+                <div className={'text-white text-center text-gray_gradient'}>
+                    <Typewriter
+                        options={{
+                            strings: ["Computer Science Student", "Software Developer", "", "Pianist"],
+                            autoStart: true,
+                            loop: true,
+                            loopCount: Infinity,
+                            deleteSpeed: "natural",
+                            pauseFor: 1000,
+                        }}
+                    />
+                </div>
+
+            </motion.div>
 
             <div className={"w-full h-full absolute inset-0 "}>
 
@@ -74,7 +90,7 @@ const Hero = () => {
 
                     <Suspense fallback={<CanvasLoader/>}>
                         <group
-                            scale ={isMobile ? 0.75 : 1}
+                            scale={isMobile ? 0.75 : 1}
                         >
                             <Office
                                 scale={[1.75, 1.5, 1.5]}
@@ -85,8 +101,8 @@ const Hero = () => {
 
                             />
                             <AirPlane
-                                scale={[0.00075, 0.00075, 0.00075]}
-                                position={[-1.6, -1, 16, 7]}
+                                scale={[0.0008, 0.0008, 0.0008]}
+                                position={[-1.6, -1, 19, 9]}
                                 rotation={[0.18, -1.6, 0]}
                                 isRotating={isRotating}
                             />
@@ -99,4 +115,4 @@ const Hero = () => {
         </section>
     )
 }
-export default Hero
+export default SectionWrapper(Hero, "home");

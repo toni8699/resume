@@ -11,6 +11,7 @@ import TimeLine from "./Sections/Timeline.jsx";
 const App = () => {
     return (
         <main className={"max-w-7xl mx-auto"}>
+
             <NavBar />
             <Hero/>
             <About/>

@@ -4,17 +4,20 @@ import {Canvas} from "@react-three/fiber";
 import {OrbitControls} from "@react-three/drei";
 import Donkey from "../Components/Donkey.jsx";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
+import {SectionWrapper} from "../hoc";
+import {motion} from "motion/react";
+import {fadeIn, slideIn, textVariant} from "../utils/motion";
 
 const Timeline = () => {
     const [animationName, setAnimationName] = useState()
     return (
         <section className={'c-space my-20'} >
             <div className={'w-full text-white-600'}>
-                <h3 className={'head-text'}>
+                <motion.h3 variants={textVariant()} className={'head-text'}>
                     My Timeline
-                </h3>
-                <div className={'work-container'}>
-                    <div className={'work-canvas md:h-full h-96'}>
+                </motion.h3>
+                <motion.div initial={"hidden"} whileInView={"show"}  className={'work-container'}>
+                    <motion.div variants={fadeIn("right", "spring", 0.5, 0.75)} className={'work-canvas md:h-full h-96'}>
                         <Canvas>
                             <Suspense fallback={CanvasLoader} >
                                 <Donkey
@@ -32,14 +35,13 @@ const Timeline = () => {
                             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI/2} />
 
                         </Canvas>
-                        {/*onClick={ () => setAnimationName(animation)}*/}
-                        {/*onPointerOver = {() => setAnimationName(animation)} onPointerOut={() => setAnimationName('m_shrek_idle3')*/}
-
-                    </div>
-                    <div className={'work-content'}>
+                    </motion.div>
+                    <motion.div variants={fadeIn("left", "spring", 0.5, 0.75)} className={'work-content'}>
                         <div className={'sm:py-10 py-5 sm:px-5 px-2.5'}>
                             {timeline.map(({id,name,title,pos,duration,animation,icon}) => (
-                                <div key={id} className={'work-content_container group'} onClick={() => setAnimationName(animation)}
+                                <motion.div
+
+                                     key={id} className={'work-content_container group'} onClick={() => setAnimationName(animation)}
                                      onPointerOver = {() => setAnimationName(animation)} onPointerOut={() => setAnimationName('m_Shrek_idle3_Loop')}   >
                                     <div className={'flex flex-col h-full justify-start items-center py-2'}>
                                         <div className={'work-content_logo'}>
@@ -60,11 +62,11 @@ const Timeline = () => {
                                         </p>
                                     </div>
 
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
 
             </div>
@@ -73,4 +75,4 @@ const Timeline = () => {
         </section>
     )
 }
-export default Timeline
+export default SectionWrapper( Timeline, "timeline")

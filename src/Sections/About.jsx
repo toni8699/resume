@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import Globe from "react-globe.gl";
 import MyGlobe from "../Components/MyGlobe.jsx";
-// import * as data from '/Users/tony/Desktop/resume/src/datasets/ne_110m_populated_places_simple.geojson'
-// import * as data from '/Users/tony/Desktop/resume/src/datasets/ne_110m_admin_0_countries.geojson'
+import {motion} from "motion/react";
+import { fadeIn, textVariant } from "../utils/motion";
+import {staggerContainer} from "../utils/motion";
+import {SectionWrapper} from "../hoc";
+import {useScroll} from "motion/react";
+
 const About = () => {
     const [copied, setCopied] = useState(false);
     const handleCopy = () => {
@@ -12,14 +16,16 @@ const About = () => {
             setCopied(false);
         }, 5000);
     }
+    const { scrollYProgress } = useScroll();
+    const delay = Math.pow((scrollYProgress - 100) / 100, 2) * 10;
 
     return (
        <section  id ={"about"} className={'c-space my-20'}>
-           <div>
+           <motion.div variants={textVariant()}>
                <h3 className={'head-text mb-7'}> About Me</h3>
-           </div>
-           <div className={'grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-4 grid-cols-1 gap-5 h-full'}>
-               <div className={'col-span-1 xl:row-span-2 '}>
+           </motion.div>
+           <div  className={'grid md:grid-cols-2 xl:grid-cols-3 xl:grid-rows-4 grid-cols-1 gap-5 h-full'}>
+               <motion.div variants={fadeIn("right", "spring", delay, 0.75)} className={'col-span-1 xl:row-span-2 '}>
                    <div className={'grid-container '}>
                        <img src={'/MyFace.JPEG'} className={"rounded-full w-full object-fit sm:h=[276px] h-fit"}/>
                        <div>
@@ -31,8 +37,8 @@ const About = () => {
                                interactive web applications. </p>
                        </div>
                    </div>
-               </div>
-               <div className={'col-span-1 xl:row-span-2 '}>
+               </motion.div>
+               <motion.div variants={fadeIn("left", "spring", delay, 0.75)} className={'col-span-1 xl:row-span-2 '}>
                    <div className={'grid-container'}>
                        <div
                            className={" sm:h-[276px] xl:h-[329px] object-contain  h-fit flex align-center justify-center flex-col"}>
@@ -78,8 +84,8 @@ const About = () => {
 
                        </div>
                    </div>
-               </div>
-               <div className={"col-span-1 xl:row-span-2"}>
+               </motion.div>
+               <motion.div  variants={fadeIn("right", "spring", delay, 0.75)} className={"col-span-1 xl:row-span-2"}>
                    <div className={'grid-container'}>
                        <div className={'rounded-3xl w-full sm:h-[326px] h-fit flex align-center justify-center'}>
                            <MyGlobe/>
@@ -95,8 +101,8 @@ const About = () => {
                        </div>
 
                    </div>
-               </div>
-               <div className={"xl:col-span-2 xl:row-span-2 sm:col-span-1"}>
+               </motion.div>
+               <motion.div variants={fadeIn( "left", "spring", delay, 0.75)} className={"xl:col-span-2 xl:row-span-2 sm:col-span-1"}>
 
                    <div className={'grid-container'}>
                        <p className={'grid-headtext'}>
@@ -132,8 +138,8 @@ const About = () => {
 
                    </div>
 
-               </div>
-               <div className={"xl:col-span-1 xl:row-span-1"}>
+               </motion.div>
+               <motion.div  variants={fadeIn("right", "spring", delay, 0.75)} className={"xl:col-span-1 xl:row-span-1"}>
                    <div className="grid-container">
                        <div className={'space-y-2 mt-5'}>
                            <p className={'grid-subtext font-medium text-center'}>
@@ -152,8 +158,8 @@ const About = () => {
                        </div>
                    </div>
 
-               </div>
-               <div className={"xl:col-span-1 xl:row-span-1"}>
+               </motion.div>
+               <motion.div  variants={fadeIn("left", "spring", delay, 0.75)} className={"xl:col-span-1 xl:row-span-1"}>
                    <div className="grid-container items-center">
                        <div>
                            <p className={'grid-subtext font-medium text-center'}>Useful Links</p>
@@ -173,7 +179,7 @@ const About = () => {
                        </div>
                    </div>
 
-               </div>
+               </motion.div>
 
            </div>
 
@@ -181,4 +187,5 @@ const About = () => {
        </section>
     )
 }
-export default About
+// export default About
+export default SectionWrapper(About, "about");

@@ -8,10 +8,7 @@ const Footer = () => {
                 <p>
                     &copy; 2024 Khang Le
                 </p>
-                <p>|</p>
-                <p>
-                    Special thanks to <a className={'hover:text-white'} href={"https://www.jsmastery.pro"}>Adrian @ Javascript Mastery</a>
-                </p>
+
             </div>
 
         </section>

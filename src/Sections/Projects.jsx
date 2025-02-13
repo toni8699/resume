@@ -5,6 +5,9 @@ import { OrbitControls} from "@react-three/drei";
 import CanvasLoader from "../Components/CanvasLoader.jsx";
 import ProjectDemo from "../Components/ProjectDemo.jsx";
 import Tooltip from '@mui/material/Tooltip';
+import {SectionWrapper} from "../hoc";
+import {motion} from "motion/react";
+import {fadeIn, slideIn, textVariant} from "../utils/motion";
 
 const Projects = () => {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
@@ -21,11 +24,11 @@ const Projects = () => {
 
     return (
         <section id={'projects'} className={"c-space my-20"}>
-            <p className="head-text">
+            <motion.p variants={textVariant()} className="head-text">
                 Projects
-            </p>
+            </motion.p>
             <div className={"grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full"}>
-                <div className={'flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl' +
+                <motion.div variants={fadeIn("right", "spring", 0.5, 0.75)} className={'flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl' +
                     'shadow-black-200'}>
                     <div className={"absolute top-0 right-0"}>
                         <img className={'h-96 w-full object-cover' +
@@ -82,8 +85,8 @@ const Projects = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={"border border-black-200 bg-black-200 rounded-lg h-96 md:h-full"}>
+                </motion.div>
+                <motion.div  variants={fadeIn("left", "spring", 0.5, 0.75)} className={"border border-black-200 bg-black-200 rounded-lg h-96 md:h-full"}>
                     <Canvas>
                         <ambientLight intensity={Math.PI}/>
                         <directionalLight position={[0,0,0]} intensity={5}/>
@@ -102,7 +105,7 @@ const Projects = () => {
                         <OrbitControls enableZoom={false}  minPolarAngle={Math.PI/2} maxPolarAngle={Math.PI/2}/>
 
                     </Canvas>
-                </div>
+                </motion.div>
 
             </div>
 
@@ -110,4 +113,4 @@ const Projects = () => {
         </section>
     )
 }
-export default Projects
+export default SectionWrapper (Projects, "projects")

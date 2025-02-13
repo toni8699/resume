@@ -85,9 +85,9 @@ export const projects = [
 
     {
         title: 'Personal Website',
-        desc: 'My personal portfolio website made with React.js and Three.js. It features a responsive design, interactive 3D animations, dynamic resume section and email contact form.',
-        subdesc: "Well, this is technically not a project, but it took me a while to make, so I'll put it in here anyway.",
-        href: './',
+        desc: 'My personal interactive portfolio website',
+        subdesc: "Fully-responsive website built using popular frameworks like React.js, Three.js for 3d graphics and Tailwind CSS for styling.",
+        href: 'https://github.com/toni8699/resume/tree/main',
         texture: '/textures/project/resume.mp4',
         logo: '/assets/JS.png',
         logoStyle: {
@@ -167,7 +167,7 @@ export const timeline= [
         animation: 'm_Shrek_int_footTap1',
     },
      {
-        id: 4,
+        id: 3,
         name: 'Compete McGill',
         pos: 'Compete developer',
         duration: '2020 - 2021',
@@ -175,7 +175,7 @@ export const timeline= [
         icon: '/assets/cp.jpeg',
         animation: 'm_Shrek_wthr_rain_AW',
     },{
-        id: 3,
+        id: 4,
         name: 'McGill Univeristy',
         pos: 'Computer Science and Mathematics',
         duration: '2019 - 2021',
