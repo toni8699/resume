@@ -62,7 +62,7 @@ const Hero = () => {
     return (
         <section id={'home'} className={"min-h-screen w-full flex flex-col relative mt-20"}>
             <motion.div variants={textVariant()} className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 mb-14">
-                <motion.h1  className={"sm:text-2xl text-3xl font-medium text-center font-generalsans text-white "}>Hi I'm
+                <motion.h1  className={"sm:text-2xl text-4xl font-bold text-center font-generalsans text-white "}>Hi, I'm
                     Khang <span className={"waving-hand"}>👋🏼</span></motion.h1>
                 <motion.p className={`text-white text-xl sm:text-2xl text-center font-medium font-generalsans `}>
                     and I am a
@@ -70,11 +70,13 @@ const Hero = () => {
                 <div className={'text-white text-center text-gray_gradient'}>
                     <Typewriter
                         options={{
-                            strings: ["Computer Science Student", "Software Developer", "", "Pianist"],
+                            strings: ["Computer Science Student", "Software Developer", "Pianist"],
                             autoStart: true,
                             loop: true,
                             loopCount: Infinity,
-                            deleteSpeed: "natural",
+                            // changeDelay:5,
+                            deleteSpeed: 50,
+                            delay:50,
                             pauseFor: 1000,
                         }}
                     />
