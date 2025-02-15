@@ -30,6 +30,49 @@ export const navLinks = [
 
 export const projects = [
     {
+        title: 'Spotafake',
+        desc: 'A full-stack Spotify-inspired music library web application.',
+        subdesc: 'Fully responsive web application built with Next.js, Typescript, TailWinds CSS, Supabase and Stripe subscription ' +
+            '',
+        href: 'https://github.com/toni8699/Spotafake',
+        texture: 'textures/project/Spotafake.mp4',
+        logo: '/assets/Blue.png',
+        logoStyle: {
+            backgroundColor: '#13202F',
+            border: '0.2px solid #17293E',
+            boxShadow: '0px 0px 60px 0px #2F6DB54D',
+        },
+        spotlight: '/assets/spotlight2.png',
+        tags: [
+            {
+                id: 1,
+                name: 'Next.js',
+                path: '/assets/nextjs.png',
+            },
+            {
+                id: 2,
+                name: 'Typescript',
+                path: '/assets/TS.png',
+            },
+            {
+                id: 3,
+                name: 'Tailwind',
+                path: '/assets/tailwindcss.png',
+            },
+            {
+                id: 4,
+                name: 'Supabase',
+                path: '/assets/supabase.jpg',
+            },
+            {
+                id: 6,
+                name: 'Stripe',
+                path: '/assets/stripe.jpeg',
+            },
+        ],
+    },
+
+    {
         title: "Can't go back",
         desc: 'A zombie-themed survival game built with custom digital assets using Unity and C#.',
         subdesc: '2-D zombie-themed game featuring custom digital assets, collision detection, and player movement.',
