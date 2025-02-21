@@ -34,7 +34,7 @@ export const projects = [
         desc: 'A full-stack Spotify-inspired music library web application.',
         subdesc: 'Fully responsive web application built with Next.js, Typescript, TailWinds CSS, Supabase and Stripe subscription ' +
             '',
-        href: 'https://github.com/toni8699/Spotafake',
+        href: 'https://spotafake.vercel.app',
         texture: 'textures/project/Spotafake.mp4',
         logo: '/assets/Blue.png',
         logoStyle: {
