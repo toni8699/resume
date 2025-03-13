@@ -160,6 +160,34 @@ export const projects = [
         ],
     },
     {
+        title: 'Mysh Shell',
+        desc: 'A simple shell built in C.',
+        subdesc:
+            'This Operating Systems project is designed to create a simple yet functional shell interpreter in C. It encompasses key operating system concepts such as process management, scheduling algorithms, and memory management. The interpreter supports both interactive and batch modes, allowing users to execute commands,' +
+            ' manage files, and run scripts efficiently. Through the implementation of various scheduling algorithms like First-Come-First-Served (FCFS), Shortest Job First (SJF), and Round Robin (RR), the project provides a practical exploration of how operating systems handle process execution and resource allocation..',
+        href: 'https://github.com/toni8699/OS',
+        texture: '/textures/project/OS.mp4',
+        logo: '/assets/C_Logo.png',
+        logoStyle: {
+            backgroundColor: '#0E1F38',
+            border: '0.2px solid #0E2D58',
+            boxShadow: '0px 0px 60px 0px #2F67B64D',
+        },
+        spotlight: '/assets/spotlight4.png',
+        tags: [
+            {
+                id: 1,
+                name: 'C',
+                path: '/assets/C_Logo.png',
+            },
+            {
+                id: 2,
+                name: 'Make',
+                path: '/assets/make.png',
+            },
+        ],
+    },
+    {
         title: 'Makefile and C Project Template',
         desc: 'Template for a Makefile and C project.',
         subdesc:
